@@ -1,0 +1,5 @@
+Source: qwt5
+Version: 5.2.3
+Homepage: https://sourceforge.net/projects/qwt
+Description: Qt widgets library for technical applications. Major version 5.
+Build-Depends: qt5-base, qt5-svg, qt5-tools

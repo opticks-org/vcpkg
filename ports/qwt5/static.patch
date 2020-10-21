@@ -1,0 +1,27 @@
+diff --git a/qwtconfig.pri b/qwtconfig.pri
+index 5a37c34..7b87f14 100644
+--- a/qwtconfig.pri
++++ b/qwtconfig.pri
+@@ -88,7 +88,7 @@ win32 {
+ # it will be a static library.
+ ######################################################################
+ 
+-CONFIG           += QwtDll
++#CONFIG           += QwtDll
+ 
+ ######################################################################
+ # QwtPlot enables all classes, that are needed to use the QwtPlot 
+@@ -127,11 +127,11 @@ CONFIG     += QwtSVGItem
+ # Otherwise you have to build it from the designer directory.
+ ######################################################################
+ 
+-CONFIG     += QwtDesigner
++#CONFIG     += QwtDesigner
+ 
+ ######################################################################
+ # If you want to auto build the examples, enable the line below
+ # Otherwise you have to build them from the examples directory.
+ ######################################################################
+ 
+-CONFIG     += QwtExamples
++#CONFIG     += QwtExamples
