@@ -1,0 +1,5 @@
+Source: xqilla
+Version: 2.3.4
+Homepage: https://sourceforge.net/projects/xqilla
+Description: XQuilla is an XQuery and XPath 2 library for C++ written on top of Xerces-c/
+Build-Depends: xerces-c

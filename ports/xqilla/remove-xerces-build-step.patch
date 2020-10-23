@@ -1,0 +1,191 @@
+diff --git a/Win32Projects/VC14/xqilla.vcxproj b/Win32Projects/VC14/xqilla.vcxproj
+index 4e04c18..eaf6f8d 100644
+--- a/Win32Projects/VC14/xqilla.vcxproj
++++ b/Win32Projects/VC14/xqilla.vcxproj
+@@ -260,14 +260,6 @@
+       <OptimizeReferences>true</OptimizeReferences>
+       <TargetMachine>NotSet</TargetMachine>
+     </Link>
+-    <PreBuildEvent >
+-      <Command>cd ..\..\..\xerces-c-src
+-      mkdir build
+-      cd build
+-      cmake -DCMAKE_INSTALL_PREFIX=..\..\..\bin\debug -DBUILD_SHARED_LIBS=ON -G "Visual Studio 14 2015 "  ..\
+-      cmake --build . --config Debug</Command>
+-      <Message>Building Xerces-C</Message>
+-    </PreBuildEvent>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static Debug|Win32'" >
+     <ClCompile >
+@@ -292,14 +284,6 @@
+       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+       <AdditionalOptions >/machine:x86 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+-    <PreBuildEvent >
+-      <Command>cd ..\..\..\xerces-c-src
+-      mkdir build
+-      cd build
+-      cmake -DCMAKE_INSTALL_PREFIX=..\..\..\bin\debug -DBUILD_SHARED_LIBS=OFF -G "Visual Studio 14 2015 "  ..\
+-      cmake --build . --config Debug</Command>
+-      <Message>Building Xerces-C</Message>
+-    </PreBuildEvent>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" >
+     <ClCompile >
+@@ -333,14 +317,6 @@
+       <OptimizeReferences>true</OptimizeReferences>
+       <TargetMachine>NotSet</TargetMachine>
+     </Link>
+-    <PreBuildEvent >
+-      <Command>cd ..\..\..\xerces-c-src
+-      mkdir build
+-      cd build
+-      cmake -DCMAKE_INSTALL_PREFIX=..\..\..\bin\release -DBUILD_SHARED_LIBS=ON -G "Visual Studio 14 2015 "  ..\
+-      cmake --build . --config Release</Command>
+-      <Message>Building Xerces-C</Message>
+-    </PreBuildEvent>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static Release|Win32'" >
+     <ClCompile >
+@@ -366,14 +342,6 @@
+       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+       <AdditionalOptions >/machine:x86 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+-    <PreBuildEvent >
+-      <Command>cd ..\..\..\xerces-c-src
+-      mkdir build
+-      cd build
+-      cmake -DCMAKE_INSTALL_PREFIX=..\..\..\bin\release -DBUILD_SHARED_LIBS=OFF -G "Visual Studio 14 2015 "  ..\
+-      cmake --build . --config Release</Command>
+-      <Message>Building Xerces-C</Message>
+-    </PreBuildEvent>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" >
+     <ClCompile >
+@@ -406,14 +374,6 @@
+       <OptimizeReferences>true</OptimizeReferences>
+       <TargetMachine>NotSet</TargetMachine>
+     </Link>
+-    <PreBuildEvent >
+-      <Command>cd ..\..\..\xerces-c-src
+-      mkdir build
+-      cd build
+-      cmake -DCMAKE_INSTALL_PREFIX=..\..\..\bin\debug -DBUILD_SHARED_LIBS=ON -G "Visual Studio 14 2015 Win64"  ..\
+-      cmake --build . --config Debug</Command>
+-      <Message>Building Xerces-C</Message>
+-    </PreBuildEvent>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static Debug|x64'" >
+     <ClCompile >
+@@ -438,14 +398,6 @@
+       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+       <AdditionalOptions >/machine:x64 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+-    <PreBuildEvent >
+-      <Command>cd ..\..\..\xerces-c-src
+-      mkdir build
+-      cd build
+-      cmake -DCMAKE_INSTALL_PREFIX=..\..\..\bin\debug -DBUILD_SHARED_LIBS=OFF -G "Visual Studio 14 2015 Win64"  ..\
+-      cmake --build . --config Debug</Command>
+-      <Message>Building Xerces-C</Message>
+-    </PreBuildEvent>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" >
+     <ClCompile >
+@@ -479,14 +431,6 @@
+       <OptimizeReferences>true</OptimizeReferences>
+       <TargetMachine>NotSet</TargetMachine>
+     </Link>
+-    <PreBuildEvent >
+-      <Command>cd ..\..\..\xerces-c-src
+-      mkdir build
+-      cd build
+-      cmake -DCMAKE_INSTALL_PREFIX=..\..\..\bin\release -DBUILD_SHARED_LIBS=ON -G "Visual Studio 14 2015 Win64"  ..\
+-      cmake --build . --config Release</Command>
+-      <Message>Building Xerces-C</Message>
+-    </PreBuildEvent>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static Release|x64'" >
+     <ClCompile >
+@@ -512,14 +456,6 @@
+       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+       <AdditionalOptions >/machine:x64 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+-    <PreBuildEvent >
+-      <Command>cd ..\..\..\xerces-c-src
+-      mkdir build
+-      cd build
+-      cmake -DCMAKE_INSTALL_PREFIX=..\..\..\bin\release -DBUILD_SHARED_LIBS=OFF -G "Visual Studio 14 2015 Win64"  ..\
+-      cmake --build . --config Release</Command>
+-      <Message>Building Xerces-C</Message>
+-    </PreBuildEvent>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" >
+     <ClCompile >
+@@ -552,14 +488,6 @@
+       <OptimizeReferences>true</OptimizeReferences>
+       <TargetMachine>NotSet</TargetMachine>
+     </Link>
+-    <PreBuildEvent >
+-      <Command>cd ..\..\..\xerces-c-src
+-      mkdir build
+-      cd build
+-      cmake -DCMAKE_INSTALL_PREFIX=..\..\..\bin\debug -DBUILD_SHARED_LIBS=ON -G "Visual Studio 14 2015 ARM"  ..\
+-      cmake --build . --config Debug</Command>
+-      <Message>Building Xerces-C</Message>
+-    </PreBuildEvent>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static Debug|ARM'" >
+     <ClCompile >
+@@ -584,14 +512,6 @@
+       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+       <AdditionalOptions >/machine:ARM %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+-    <PreBuildEvent >
+-      <Command>cd ..\..\..\xerces-c-src
+-      mkdir build
+-      cd build
+-      cmake -DCMAKE_INSTALL_PREFIX=..\..\..\bin\debug -DBUILD_SHARED_LIBS=OFF -G "Visual Studio 14 2015 ARM"  ..\
+-      cmake --build . --config Debug</Command>
+-      <Message>Building Xerces-C</Message>
+-    </PreBuildEvent>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" >
+     <ClCompile >
+@@ -625,14 +545,6 @@
+       <OptimizeReferences>true</OptimizeReferences>
+       <TargetMachine>NotSet</TargetMachine>
+     </Link>
+-    <PreBuildEvent >
+-      <Command>cd ..\..\..\xerces-c-src
+-      mkdir build
+-      cd build
+-      cmake -DCMAKE_INSTALL_PREFIX=..\..\..\bin\release -DBUILD_SHARED_LIBS=ON -G "Visual Studio 14 2015 ARM"  ..\
+-      cmake --build . --config Release</Command>
+-      <Message>Building Xerces-C</Message>
+-    </PreBuildEvent>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static Release|ARM'" >
+     <ClCompile >
+@@ -658,14 +570,6 @@
+       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+       <AdditionalOptions >/machine:ARM %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+-    <PreBuildEvent >
+-      <Command>cd ..\..\..\xerces-c-src
+-      mkdir build
+-      cd build
+-      cmake -DCMAKE_INSTALL_PREFIX=..\..\..\bin\release -DBUILD_SHARED_LIBS=OFF -G "Visual Studio 14 2015 ARM"  ..\
+-      cmake --build . --config Release</Command>
+-      <Message>Building Xerces-C</Message>
+-    </PreBuildEvent>
+   </ItemDefinitionGroup>
+   <ItemGroup >
+     <ClInclude Include="..\..\include\xqc.h" />
+@@ -1544,4 +1448,4 @@
+   </ImportGroup>
+   <ItemGroup >
+   </ItemGroup>
+-</Project>
+\ No newline at end of file
++</Project>

@@ -1,0 +1,79 @@
+diff --git a/src/functions/FunctionParseJSON.cpp b/src/functions/FunctionParseJSON.cpp
+index 5aaeb77..9ca8fc5 100644
+--- a/src/functions/FunctionParseJSON.cpp
++++ b/src/functions/FunctionParseJSON.cpp
+@@ -20,7 +20,7 @@
+ #include "../config/xqilla_config.h"
+ 
+ #include <stdio.h> // for sprintf
+-#ifdef _MSC_VER
++#if defined(_MSC_VER) && _MSC_VER < 1910
+ #define snprintf _snprintf
+ #endif
+ 
+diff --git a/src/functions/FunctionSerializeJSON.cpp b/src/functions/FunctionSerializeJSON.cpp
+index d663e14..1801ed3 100644
+--- a/src/functions/FunctionSerializeJSON.cpp
++++ b/src/functions/FunctionSerializeJSON.cpp
+@@ -20,7 +20,7 @@
+ #include "../config/xqilla_config.h"
+ 
+ #include <stdio.h> // for sprintf
+-#if defined(WIN32) && !defined(__CYGWIN__) && !defined(__MINGW__)
++#if defined(WIN32) && !defined(__CYGWIN__) && !defined(__MINGW__) && _MSC_VER < 1910
+ #define snprintf _snprintf
+ #endif
+ 
+diff --git a/src/utils/DateUtils.cpp b/src/utils/DateUtils.cpp
+index eca3ac2..897f1b5 100644
+--- a/src/utils/DateUtils.cpp
++++ b/src/utils/DateUtils.cpp
+@@ -22,7 +22,7 @@
+ #include <math.h>
+ #include <climits>
+ #include <stdio.h> // for sprintf
+-#if defined(WIN32) && !defined(__CYGWIN__) && !defined(__MINGW__)
++#if defined(WIN32) && !defined(__CYGWIN__) && !defined(__MINGW__) && _MSC_VER < 1910
+ #define snprintf _snprintf
+ #endif
+ 
+diff --git a/src/utils/XPath2Utils.cpp b/src/utils/XPath2Utils.cpp
+index f44547a..4e554c5 100644
+--- a/src/utils/XPath2Utils.cpp
++++ b/src/utils/XPath2Utils.cpp
+@@ -40,7 +40,7 @@
+ 
+ #include <xqilla/mapm/m_apm.h>
+ 
+-#if defined(WIN32) && !defined(__CYGWIN__) && !defined(__MINGW32__)
++#if defined(WIN32) && !defined(__CYGWIN__) && !defined(__MINGW32__) && _MSC_VER < 1910
+ #define snprintf _snprintf
+ #endif
+ 
+diff --git a/src/xqts/TestSuiteResultListener.cpp b/src/xqts/TestSuiteResultListener.cpp
+index c9373ac..172a4a1 100644
+--- a/src/xqts/TestSuiteResultListener.cpp
++++ b/src/xqts/TestSuiteResultListener.cpp
+@@ -27,7 +27,7 @@
+ #include <iostream>
+ #include <fstream>
+ #include <time.h>
+-#ifdef _MSC_VER
++#if defined(_MSC_VER) && _MSC_VER < 1910
+ #define snprintf _snprintf
+ #endif
+ 
+diff --git a/tests/xmark/xmark.cpp b/tests/xmark/xmark.cpp
+index 1631600..8fbc422 100644
+--- a/tests/xmark/xmark.cpp
++++ b/tests/xmark/xmark.cpp
+@@ -22,7 +22,9 @@
+ #ifdef _MSC_VER
+ #pragma warning(disable: 4786)
+ #include <time.h>
++#if _MSC_VER < 1910
+ #define snprintf _snprintf
++#endif
+ #else
+ #include <sys/time.h>
+ #endif
