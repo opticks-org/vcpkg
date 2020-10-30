@@ -6,7 +6,7 @@ vcpkg_from_sourceforge(
     PATCHES remove-xerces-build-step.patch fix-snprintf.patch
 )
 
-if (VCPKG_TARGET_IS_WINDOWS)
+if (NOT DEFINED VCPKG_BUILD_TYPE OR VCPKG_BUILD_TYPE STREQUAL "release")
     vcpkg_build_msbuild(
         PROJECT_PATH ${SOURCE_PATH}/Win32Projects/VC14/XQilla.sln
         OPTIONS /p:PreBuildEvent=""
@@ -16,6 +16,13 @@ else ()
 endif ()
 
 #Install the header files
-install(DIRECTORY ${SOURCE_PATH}/include/ DESTINATION ${CURRENT_PACKAGES_DIR}/include/${PORT}
-    FILES_MATCHING PATTERN "*.h*")
+file(INSTALL ${SOURCE_PATH}/include/xqilla/ DESTINATION ${CURRENT_PACKAGES_DIR}/include/${PORT}/)
+if (NOT DEFINED VCPKG_BUILD_TYPE OR VCPKG_BUILD_TYPE STREQUAL "release")
+	file(INSTALL ${SOURCE_PATH}/build/windows/VC14/${VCPKG_TARGET_ARCHITECTURE}/Release/xqilla23.lib DESTINATION ${CURRENT_PACKAGES_DIR}/lib/)
+	file(INSTALL ${SOURCE_PATH}/build/windows/VC14/${VCPKG_TARGET_ARCHITECTURE}/Release/xqilla23.dll DESTINATION ${CURRENT_PACKAGES_DIR}/bin/)
+endif ()
+if (NOT DEFINED VCPKG_BUILD_TYPE OR VCPKG_BUILD_TYPE STREQUAL "debug")
+	file(INSTALL ${SOURCE_PATH}/build/windows/VC14/${VCPKG_TARGET_ARCHITECTURE}/Debug/xqilla23d.lib DESTINATION ${CURRENT_PACKAGES_DIR}/debug/lib/)
+	file(INSTALL ${SOURCE_PATH}/build/windows/VC14/${VCPKG_TARGET_ARCHITECTURE}/Debug/xqilla23d.dll DESTINATION ${CURRENT_PACKAGES_DIR}/debug/bin/)
+endif ()
 file(INSTALL ${SOURCE_PATH}/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT} RENAME copyright)
