@@ -1,0 +1,19 @@
+Source: hdf4
+Version: 4.2.15
+Homepage: https://support.hdfgroup.org/products/hdf4/
+Description: HDF is a physical file format for storing scientific data. 
+Default-Features: szip, zlib
+Supports: !uwp
+
+Feature: szip
+Description: Build with szip
+Build-Depends: szip
+
+Feature: zlib
+Description: Build with zlib
+Build-Depends: zlib
+
+Feature: fortran
+Description: Build with fortran
+Build-Depends: 
+
