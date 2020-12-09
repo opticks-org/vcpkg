@@ -13,6 +13,9 @@ Feature: zlib
 Description: Build with zlib
 Build-Depends: zlib
 
+Feature: netcdf
+Description: Build with netcdf support
+
 Feature: fortran
 Description: Build with fortran
 Build-Depends: 

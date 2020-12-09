@@ -20,6 +20,7 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
    FEATURES # <- Keyword FEATURES is required because INVERTED_FEATURES are being used
      szip         HDF4_ENABLE_SZIP_SUPPORT
      zlib         HDF4_ENABLE_Z_LIB_SUPPORT
+     netcdf       HDF4_ENABLE_NETCDF
      fortran      HDF4_BUILD_FORTRAN
 )
 
