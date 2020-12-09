@@ -1,0 +1,154 @@
+diff --git a/src/win32_raptor_config.h b/src/win32_raptor_config.h
+index aa7ec8c..ba7f94f 100644
+--- a/src/win32_raptor_config.h
++++ b/src/win32_raptor_config.h
+@@ -69,11 +69,13 @@ extern "C" {
+ #define HAVE_STRICMP 1
+ 
+ /* MS names for these functions */
++#if 0
+ #define vsnprintf _vsnprintf
+ #define snprintf _snprintf
+ #define access _access
+ #define stricmp _stricmp
+ #define strnicmp _strnicmp
++#endif
+ 
+ /*#define HAVE_C99_VSNPRINTF */
+ 
+diff --git a/win32/rapper.vcxproj b/win32/rapper.vcxproj
+index 89e0b62..5e622ac 100644
+--- a/win32/rapper.vcxproj
++++ b/win32/rapper.vcxproj
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -20,27 +20,32 @@
+   </ItemGroup>
+   <PropertyGroup Label="Globals">
+     <ProjectGuid>{1FFF7A31-D1A9-4516-AB07-4D415ABAB733}</ProjectGuid>
++    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v141</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v141</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v141</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v141</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff --git a/win32/raptor.sln b/win32/raptor.sln
+index 956eb21..e9d6a74 100644
+--- a/win32/raptor.sln
++++ b/win32/raptor.sln
+@@ -1,5 +1,7 @@
+-Microsoft Visual Studio Solution File, Format Version 11.00
+-# Visual Studio 2010
++Microsoft Visual Studio Solution File, Format Version 12.00
++# Visual Studio 15
++VisualStudioVersion = 15.0.28307.1267
++MinimumVisualStudioVersion = 10.0.40219.1
+ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rapper", "rapper.vcxproj", "{1FFF7A31-D1A9-4516-AB07-4D415ABAB733}"
+ EndProject
+ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "raptor", "raptor.vcxproj", "{F48C108E-B937-4D8C-A308-9C257C5D0D3D}"
+@@ -38,4 +40,7 @@ Global
+ 	GlobalSection(SolutionProperties) = preSolution
+ 		HideSolutionNode = FALSE
+ 	EndGlobalSection
++	GlobalSection(ExtensibilityGlobals) = postSolution
++		SolutionGuid = {9EC792E5-BB39-4670-93F9-A17B54EFA34F}
++	EndGlobalSection
+ EndGlobal
+diff --git a/win32/raptor.vcxproj b/win32/raptor.vcxproj
+index 8f3b27b..4ad83ed 100644
+--- a/win32/raptor.vcxproj
++++ b/win32/raptor.vcxproj
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -21,27 +21,32 @@
+   <PropertyGroup Label="Globals">
+     <ProjectGuid>{F48C108E-B937-4D8C-A308-9C257C5D0D3D}</ProjectGuid>
+     <RootNamespace>raptor</RootNamespace>
++    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v141</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v141</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v141</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v141</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+@@ -192,8 +197,7 @@
+       <Culture>0x0409</Culture>
+     </ResourceCompile>
+     <Link>
+-      <AdditionalDependencies>urlmon.lib;libxml2.lib;iconv.lib;libxslt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <OutputFile>.\Debug/raptor.dll</OutputFile>
++      <AdditionalDependencies>urlmon.lib;libxml2.lib;libexpatd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <SuppressStartupBanner>true</SuppressStartupBanner>
+       <AdditionalLibraryDirectories>..\..\..\libxml2\lib;..\..\..\iconv-1.9.1.win32\lib;..\..\..\libxslt\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+@@ -202,6 +206,7 @@
+       <MapFileName>.\Debug/raptor.map</MapFileName>
+       <ImportLibrary>.\Debug/raptor.lib</ImportLibrary>
+       <TargetMachine>MachineX64</TargetMachine>
++      <OutputFile>$(OutDir)$(TargetName)d$(TargetExt)</OutputFile>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+@@ -236,7 +241,6 @@
+     </ResourceCompile>
+     <Link>
+       <AdditionalDependencies>urlmon.lib;odbc32.lib;odbccp32.lib;libexpat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <OutputFile>.\Release/raptor.dll</OutputFile>
+       <SuppressStartupBanner>true</SuppressStartupBanner>
+       <AdditionalLibraryDirectories>..\..\..\libxml2\lib;..\..\..\iconv-1.9.1.win32\lib;..\..\..\libxslt\lib;C:\Kip\VS2010\expat-2.0.1-32bit\win32\bin\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <ProgramDatabaseFile>.\Release/raptor.pdb</ProgramDatabaseFile>
