@@ -1,0 +1,36 @@
+diff --git a/src/lib/openjp2/openjpeg.c b/src/lib/openjp2/openjpeg.c
+index 0c5f2d5f..22ee0fcf 100644
+--- a/src/lib/openjp2/openjpeg.c
++++ b/src/lib/openjp2/openjpeg.c
+@@ -1097,6 +1097,12 @@ opj_stream_t* OPJ_CALLCONV opj_stream_create_file_stream(
+     return l_stream;
+ }
+ 
++opj_stream_t* OPJ_CALLCONV opj_stream_seek_stream(opj_stream_t* p_stream, OPJ_OFF_T p_offset)
++{
++    opj_stream_private_t * l_stream = (opj_stream_private_t *) p_stream;
++    return opj_stream_seek(l_stream, p_offset, NULL);
++}
++
+ 
+ void* OPJ_CALLCONV opj_image_data_alloc(OPJ_SIZE_T size)
+ {
+diff --git a/src/lib/openjp2/openjpeg.h b/src/lib/openjp2/openjpeg.h
+index 8829963f..a16369bd 100644
+--- a/src/lib/openjp2/openjpeg.h
++++ b/src/lib/openjp2/openjpeg.h
+@@ -1256,6 +1256,14 @@ OPJ_API opj_stream_t* OPJ_CALLCONV opj_stream_create_file_stream(
+     OPJ_SIZE_T p_buffer_size,
+     OPJ_BOOL p_is_read_stream);
+ 
++/** Seek in a stream if supported.
++ * @param p_stream          the stream to seek
++ * @param p_offset          the number of bytes to seek
++*/
++OPJ_API opj_stream_t* OPJ_CALLCONV opj_stream_seek_stream(
++    opj_stream_t* p_stream,
++    OPJ_OFF_T p_offset);
++
+ /*
+ ==========================================================
+    event manager functions definitions
