@@ -19,7 +19,9 @@ endif()
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
     PREFER_NINJA
-    OPTIONS ${FEATURE_OPTIONS}
+    OPTIONS -DBUILD_OSSIM_APPS=OFF
+            -DBUILD_OSSIM_TESTS=OFF
+            ${FEATURE_OPTIONS}
             ${OPTIONS}
 )
 
@@ -27,6 +29,7 @@ vcpkg_install_cmake()
 vcpkg_fixup_cmake_targets()
 
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/share)
 
 # Handle copyright
 file(INSTALL "${SOURCE_PATH}/LICENSE.txt" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}" RENAME copyright)
