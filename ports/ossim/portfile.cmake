@@ -3,7 +3,7 @@ vcpkg_from_github(
     REPO ossimlabs/ossim
     REF OrchidIsland-2.11.1
     SHA512 ec075e2809d6117b8307f72c31892e351312c227d143c047c8c56b68ce1b6eba68deb49d875d5df0c5a1aefd78fe25ec7fccaa6dcb5b8df9e560445385123e4e
-    HEAD_REF master
+    HEAD_REF dev
     PATCHES 
         vs2017_fix.patch
 )
