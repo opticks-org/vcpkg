@@ -30,6 +30,7 @@ vcpkg_configure_cmake(
     PREFER_NINJA
     OPTIONS -DBUILD_CODEC:BOOL=OFF
             -DBUILD_DOC:BOOL=OFF
+			-DCMAKE_DEBUG_POSTFIX=d
             -DOPENJPEG_INSTALL_PACKAGE_DIR=share/openjpeg
             -DOPENJPEG_INSTALL_INCLUDE_DIR=include
             -DEXECUTABLE_OUTPUT_PATH=tools/${PORT}

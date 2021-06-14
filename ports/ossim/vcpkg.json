@@ -1,0 +1,12 @@
+{
+  "name": "ossim",
+  "version-semver": "2.11.1",
+  "port-version": 1,
+  "description": "OSSIM is an open source, C++ (mostly), geospatial image processing library used by government, commercial, educational, and private entities throughout the solar system.",
+  "homepage": "https://github.com/ossimlabs/ossim",
+  "dependencies": [
+    "tiff",
+    "libjpeg-turbo",
+    "geos"
+  ]
+}

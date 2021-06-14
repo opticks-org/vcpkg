@@ -1,0 +1,38 @@
+diff --git a/include/ossim/base/ossimString.h b/include/ossim/base/ossimString.h
+index ef108526..d44f5ba6 100644
+--- a/include/ossim/base/ossimString.h
++++ b/include/ossim/base/ossimString.h
+@@ -250,6 +250,21 @@ public:
+       return result;
+    }
+ 
++   /**
++    *  @brief  Test if this ossimString is equal to a character.
++    *  @param rhs character to compare.
++    *  @return  True if strings are not equal.  False otherwise.
++    */
++   bool operator==(char rhs) const
++   {
++       bool result = false;
++       if (rhs)
++       {
++           result = (m_str.compare(std::string(1, rhs)) == 0);
++       }
++       return result;
++   }
++
+    /**
+     *  @brief  Test if this ossimString is not equal to another ossimString.
+     *  @param rhs ossimString to compare.
+@@ -276,6 +291,11 @@ public:
+       return result;
+    }
+ 
++   bool operator!=(char rhs) const
++   {
++       return (!m_str.compare(std::string(1, rhs)) == 0);
++   }
++
+    bool operator<(const ossimString& rhs) const
+    {
+       return m_str < rhs.m_str;

@@ -65,7 +65,7 @@ macro(find_dependency_win)
   # Setup OpenJPEG libraries + include path
   set(OPENJPEG_INCLUDE_DIR "${CURRENT_INSTALLED_DIR}/include" )
   set(OPENJPEG_LIBRARY_REL "${CURRENT_INSTALLED_DIR}/lib/openjp2.lib" )
-  set(OPENJPEG_LIBRARY_DBG "${CURRENT_INSTALLED_DIR}/debug/lib/openjp2.lib" )
+  set(OPENJPEG_LIBRARY_DBG "${CURRENT_INSTALLED_DIR}/debug/lib/openjp2d.lib" )
 
   # Setup WebP libraries + include path
   set(WEBP_INCLUDE_DIR "${CURRENT_INSTALLED_DIR}/include" )
